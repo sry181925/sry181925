@@ -42,9 +42,6 @@ class _MyBottomBarState extends State<MyBottomBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
-      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),

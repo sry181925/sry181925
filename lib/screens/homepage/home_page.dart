@@ -14,7 +14,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class HomePage extends StatelessWidget{
   const HomePage({Key? key}) : super(key: key);
 
-  AppBar buildAppBar(){
+AppBar buildAppBar(){
 return AppBar(
   bottom: TabBar(
       labelPadding: EdgeInsets.symmetric(horizontal: 20,),
@@ -35,14 +35,11 @@ return AppBar(
         Text("Accesories"),
       ],
       ),
-  backgroundColor: Colors.transparent,
+  backgroundColor: Colors.black12,
   elevation: 0.0,
   centerTitle: true,
-  title: Column(children: [
-    Text("welcome",
-    style: HomeScreenStylies.appBarUpperTitleStylies,
-    )
-  ]),
+  title: Column(children: [ Text("E-JKM",style: HomeScreenStylies.appBarUpperTitleStylies,),
+  ],),
 actions: [
   IconButton(onPressed:(){}, icon: RotationTransition( turns: AlwaysStoppedAnimation(90/360),
   child: SvgPicture.asset(SvgImages.filter,
@@ -56,6 +53,9 @@ actions: [
 ],
 )  ;   
 }
+
+//Advertisment portal code is here
+
 Widget buildAdvertismentPlace(){
   return Padding(
   padding:EdgeInsets.all(10.0),
@@ -64,6 +64,9 @@ Widget buildAdvertismentPlace(){
         children: [
           CarouselSlider(
               items: [
+
+//1st Image of Slider 
+
                 Container(
                   margin: EdgeInsets.only(top:6.0,bottom:6.0),
                   decoration: BoxDecoration(
@@ -75,7 +78,8 @@ Widget buildAdvertismentPlace(){
                   ),
                 ),
                   
-                //2nd Image of Slider
+ //2nd Image of Slider
+
                 Container(
                   margin: EdgeInsets.all(6.0),
                   decoration: BoxDecoration(
@@ -86,7 +90,9 @@ Widget buildAdvertismentPlace(){
                     ),
                   ),
                 ),
-                //3rd Image of Slider
+
+//3rd Image of Slider
+
                 Container(
                   margin: EdgeInsets.only(top:6.0,bottom: 6.0),
                   decoration: BoxDecoration(
@@ -98,7 +104,7 @@ Widget buildAdvertismentPlace(){
                   ),
                 ),
                   
-                //4th Image of Slider
+//4th Image of Slider
                 Container(
                   margin: EdgeInsets.only(top:6.0,bottom: 6.0),
                   decoration: BoxDecoration(
@@ -110,7 +116,7 @@ Widget buildAdvertismentPlace(){
                   ),
                 ),
                   
-                //5th Image of Slider
+//5th Image of Slider
                 Container(
                   margin: EdgeInsets.only(top:6.0,bottom:6.0),
                   decoration: BoxDecoration(
@@ -126,13 +132,13 @@ Widget buildAdvertismentPlace(){
               
 //Slider Container properties
               options: CarouselOptions(
-                height: 180.0,
+                height: 185.0,
                 enlargeCenterPage: true,
                 autoPlay: true,
-                aspectRatio: 16 / 9,
+                aspectRatio: 17 / 9,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 enableInfiniteScroll: true,
-                autoPlayAnimationDuration: Duration(milliseconds: 800),
+                autoPlayAnimationDuration: Duration(milliseconds: 900),
                 viewportFraction: 0.8,
               ),
           ),
@@ -144,7 +150,6 @@ Widget buildAdvertismentPlace(){
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return DefaultTabController(
       length: 4,
       child: Scaffold(
@@ -153,6 +158,9 @@ Widget buildAdvertismentPlace(){
           ListView(
             physics: BouncingScrollPhysics(),
             children: [
+
+ // Advertisment function call here 
+             
               buildAdvertismentPlace(),   
               ShowAllWidget(leftText: "New Arrival"), 
               Padding(
@@ -161,9 +169,11 @@ Widget buildAdvertismentPlace(){
                 primary: true,
                 itemCount: singleProductData.length, 
                 physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
-                childAspectRatio: 0.7), itemBuilder: (context,index){
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 0.7), itemBuilder: (context,index){
             var data=singleProductData[index];
+
+// Single Product Widget is call here
+            
             return SingleProductWidget(
              productImage: data.productImage,
              productName: data.productName,
