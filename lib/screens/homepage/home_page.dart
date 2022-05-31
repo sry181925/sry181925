@@ -17,24 +17,24 @@ class HomePage extends StatelessWidget{
   AppBar buildAppBar(){
 return AppBar(
   bottom: TabBar(
-  labelPadding: EdgeInsets.symmetric(horizontal: 20,),
-  indicator: BoxDecoration(
-  color: Colors.transparent,
-  ),
-  isScrollable: true,
-  indicatorSize: TabBarIndicatorSize.label ,
-  labelStyle: TextStyle(
-  fontSize: 15,
-  fontWeight: FontWeight.bold,
-  ),
-  unselectedLabelColor: AppColors.baseBlackColor,
-  tabs: [
-    Text("All"),
-    Text("Clothing"),
-    Text("Shoes"),
-    Text("Accesories"),
-  ],
-  ),
+      labelPadding: EdgeInsets.symmetric(horizontal: 20,),
+      indicator: BoxDecoration(
+      color: Colors.transparent,
+      ),
+      isScrollable: true,
+      indicatorSize: TabBarIndicatorSize.label ,
+      labelStyle: TextStyle(
+      fontSize: 15,
+      fontWeight: FontWeight.bold,
+      ),
+      unselectedLabelColor: AppColors.baseBlackColor,
+      tabs: [
+        Text("All"),
+        Text("Clothing"),
+        Text("Shoes"),
+        Text("Accesories"),
+      ],
+      ),
   backgroundColor: Colors.transparent,
   elevation: 0.0,
   centerTitle: true,
