@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'e-jkm',
+        title: 'E-JKM',
         theme: ThemeData(
             appBarTheme: AppBarTheme(
               iconTheme: IconThemeData(

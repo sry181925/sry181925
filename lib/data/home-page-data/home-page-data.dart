@@ -1,9 +1,9 @@
+
 import 'package:e_jkmm/models/SingleProductModel.dart';
 
 List<SingleProductModel> singleProductData = [
   SingleProductModel(
-    productImage:
-        'https://assets.adidas.com/images/w_600,f_auto,q_auto/57d461193168475e8eecab4501127ab6_9366/Falcon_Shoes_Pink_FX7196_01_standard.jpg',
+    productImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/57d461193168475e8eecab4501127ab6_9366/Falcon_Shoes_Pink_FX7196_01_standard.jpg',
     productModel: 'Sneakers',
     productName: 'Falcon Clear Pink',
     productOldPrice: 105,
@@ -13,13 +13,12 @@ List<SingleProductModel> singleProductData = [
     productThirdImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/46f2b6a4a05740aa9e83ac5d00e45b7f_9366/Falcon_Shoes_Pink_FV8278_05_standard.jpg'
   ),
   SingleProductModel(
-    productImage:
-        'https://assets.adidas.com/images/w_600,f_auto,q_auto/a143c8a9b9df4d1fb8faaaf600c68fce_9366/Essentials_Linear_Pants_Grey_FM6805_21_model.jpg',
+    productImage:'https://assets.adidas.com/images/w_600,f_auto,q_auto/a143c8a9b9df4d1fb8faaaf600c68fce_9366/Essentials_Linear_Pants_Grey_FM6805_21_model.jpg',
     productModel: 'Hoodies',
     productName: 'Essentials Linear',
     productOldPrice: 80,
     productPrice: 60,
-     productFourImage: 'https://images-na.ssl-images-amazon.com/images/I/31nJjFCCZkL._AC_.jpg',
+    productFourImage: 'https://images-na.ssl-images-amazon.com/images/I/31nJjFCCZkL._AC_.jpg',
     productSecondImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/bb357021b59a4939926aa6a600c3d86f_9366/Essentials_Linear_Full_Zip_Hoodie_Black_S97076_21_model.jpg',
     productThirdImage: 'https://resources.mandmdirect.com/Images/_default/a/d/1/ad17572_2_cloudzoom.jpg'
   ),

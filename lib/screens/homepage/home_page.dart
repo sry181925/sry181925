@@ -12,6 +12,8 @@ import 'package:e_jkmm/widgets/singleProduct_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatelessWidget{
+  const HomePage({Key? key}) : super(key: key);
+
   AppBar buildAppBar(){
 return AppBar(
   bottom: TabBar(
@@ -19,11 +21,10 @@ return AppBar(
   indicator: BoxDecoration(
   color: Colors.transparent,
   ),
-
   isScrollable: true,
   indicatorSize: TabBarIndicatorSize.label ,
   labelStyle: TextStyle(
-  fontSize: 14,
+  fontSize: 15,
   fontWeight: FontWeight.bold,
   ),
   unselectedLabelColor: AppColors.baseBlackColor,
@@ -80,7 +81,7 @@ Widget buildAdvertismentPlace(){
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     image: DecorationImage(
-                      image: NetworkImage(" https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/02/01/785054-ecommerce-istock-020119.jpg"),
+                      image: NetworkImage("https://thumbs.dreamstime.com/z/e-commerce-sale-discount-flat-vector-illustration-online-shopping-buyer-seeking-cheap-dresses-special-offers-womens-clothing-145448368.jpg"),
                       fit: BoxFit.cover,
                     ),
                   ),
