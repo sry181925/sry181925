@@ -56,14 +56,15 @@ actions: [
 )  ;   
 }
 Widget buildAdvertismentPlace(){
-  return Padding(padding:EdgeInsets.all(18.0),
-  child: Container(height: 170,
+  return Padding(
+  padding:EdgeInsets.all(10.0),
+  child: Container(height: 200,width: 300,
   child: ListView(
         children: [
           CarouselSlider(
               items: [
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.only(top:6.0,bottom:6.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     image: DecorationImage(
@@ -86,7 +87,7 @@ Widget buildAdvertismentPlace(){
                 ),
                 //3rd Image of Slider
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.only(top:6.0,bottom: 6.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     image: DecorationImage(
@@ -98,7 +99,7 @@ Widget buildAdvertismentPlace(){
                   
                 //4th Image of Slider
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.only(top:6.0,bottom: 6.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     image: DecorationImage(
@@ -110,7 +111,7 @@ Widget buildAdvertismentPlace(){
                   
                 //5th Image of Slider
                 Container(
-                  margin: EdgeInsets.all(6.0),
+                  margin: EdgeInsets.only(top:6.0,bottom:6.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     image: DecorationImage(
