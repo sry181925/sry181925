@@ -1,4 +1,6 @@
 // ignore: import_of_legacy_library_into_null_safe
+import 'package:e_jkmm/routes/routes.dart';
+import 'package:e_jkmm/screens/detailscreen/detail_screen.dart';
 import 'package:e_jkmm/tabbar_data.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -262,7 +264,6 @@ Widget buildAdvertismentPlace(){
                   indent: 16,
                   endIndent: 16,
                 ),
-            
                 ShowAllWidget(
                   leftText: "What\'s trending",
                 ),
@@ -300,7 +301,9 @@ Widget buildAdvertismentPlace(){
                     itemBuilder: (context,index){
                         var data=singleProductData[index];
                         return SingleProductWidget(
-                            onPressed: (){},
+                            onPressed: (){
+                              PageRouting.goToNextPage(context: context, navigateTo: DetailScreen(data: data));
+                            },
                          productImage: data.productImage,
                          productName: data.productName,
                          productModel: data.productModel, 
@@ -313,9 +316,9 @@ Widget buildAdvertismentPlace(){
             ],
           ),
 
-          TabBarBar(),
-          Center(child: Text("3 page")),
-          Center(child: Text("4 Page")),
+          TabBarBar(productData: colothsData,),
+          TabBarBar(productData: shoesData,), 
+          TabBarBar(productData: accessoriesData,),
         ])
       ),
     );

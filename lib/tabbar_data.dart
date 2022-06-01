@@ -1,6 +1,5 @@
 
 
-//import 'package:e_jkm/models/categoryProductModel.dart';
 //import 'package:e_jkm/routes/routes.dart';
 //import 'package:cheap_charly/screens/category/sub_category.dart';
 //import 'package:cheap_charly/screens/detailscreen/detail_screen.dart';
@@ -11,9 +10,9 @@ import 'package:e_jkmm/widgets/singleProduct_widget.dart';
 import 'package:flutter/material.dart';
 
 class TabBarBar extends StatelessWidget {
-  //final List<SingleProductModel> productData;
+  final List<SingleProductModel>productData;
  // final List<CategoryProductModel> categoryProductData;
- //TabBarBar({required this.productData, /*this.categoryProductData8*/});
+ TabBarBar({required this.productData, /*this.categoryProductData8*/});
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -24,10 +23,10 @@ class TabBarBar extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, childAspectRatio: 0.7),
       itemBuilder: (context, index) {
-        var data = colothsData[index];
+        var data = productData[index];
         return SingleProductWidget(
           onPressed: () {
-           /* PageRouting.goToNextPage(
+           /*PageRouting.goToNextPage(
               context: context,
               navigateTo: DetailScreen(data: data),
             );*/
