@@ -1,5 +1,5 @@
 import 'package:e_jkmm/appColors/app_colors.dart';
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreenStylies {

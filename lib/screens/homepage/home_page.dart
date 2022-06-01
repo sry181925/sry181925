@@ -1,4 +1,5 @@
 // ignore: import_of_legacy_library_into_null_safe
+import 'package:e_jkmm/tabbar_data.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -148,6 +149,77 @@ Widget buildAdvertismentPlace(){
       );
 }
 
+//Tranding product fuction create here
+
+ Widget buildTrendingProduct({
+    required String productImage,
+    required String productName,
+    required String productModel,
+    required double productPrice,
+  }) {
+    return Container(
+      margin: EdgeInsets.only(top: 30, left: 30, right: 20, bottom: 20),
+      height: 65,
+      child: Row(
+        children: [
+          Expanded(
+            flex: 2,
+            child: Material(
+              shape: RoundedRectangleBorder(
+                side: BorderSide.none,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Image.network(productImage),
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    productName,
+                    overflow: TextOverflow.ellipsis,
+                    style: HomeScreenStylies.trendingProductNameStyle,
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    productModel,
+                    style: HomeScreenStylies.trendingProductModelStyle,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 30.0,
+            ),
+            child: MaterialButton(
+              color: AppColors.baseLightPinkColor,
+              elevation: 0,
+              height: 30,
+              shape: RoundedRectangleBorder(
+                side: BorderSide.none,
+                borderRadius: BorderRadius.circular(5),
+              ),
+              onPressed: () {},
+              child: Text(
+                "\$ $productPrice",
+                style: HomeScreenStylies.trendingProductPriceStyle,
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+//Main function is create here 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -181,14 +253,70 @@ Widget buildAdvertismentPlace(){
              productPrice: data.productPrice, 
              productOldPrice: data.productOldPrice, 
              onPressed: (){},);
-          }),)
+          }
+          ),
+          ),
+//Images for the tranding product
+
+        Divider(
+                  indent: 16,
+                  endIndent: 16,
+                ),
+            
+                ShowAllWidget(
+                  leftText: "What\'s trending",
+                ),
+                buildTrendingProduct(
+                  productImage:
+                      'https://static.langimg.com/thumb/msid-86755841,imgsize-180812,width-700,height-525,resizemode-75/navbharat-times.jpg',
+                  productModel: 'shirt',
+                  productName: 'Formal shirt for mens',
+                  productPrice: 15.3,
+                ),
+                buildTrendingProduct(
+                  productImage:
+                      'https://static.langimg.com/thumb/msid-91511914,imgsize-37772,width-700,height-525,resizemode-75/navbharat-times.jpg',
+                  productModel: 'Shoes',
+                  productName: 'Nike shoes for man',
+                  productPrice: 25.5,
+                ),
+                buildTrendingProduct(
+                  productImage:
+                      'https://cdn.shopify.com/s/files/1/0282/3313/8275/files/20220225_CHRM_HP_REDESIGN_Desktop_P4_Accessories_300x.jpg?v=1645829626',
+                  productModel: 'Accesories',
+                  productName: 'Women Accessories',
+                  productPrice: 30.2,
+                ),
+
+                ShowAllWidget(leftText: "History"),
+                  Container(
+                  height: 260,
+                  child: GridView.builder(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    primary: true,
+                    itemCount: singleProductData.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 1.5),
+                    itemBuilder: (context,index){
+                        var data=singleProductData[index];
+                        return SingleProductWidget(
+                            onPressed: (){},
+                         productImage: data.productImage,
+                         productName: data.productName,
+                         productModel: data.productModel, 
+                         productPrice: data.productPrice, 
+                         productOldPrice: data.productOldPrice, 
+                       );
+                    },
+                    ),
+                  ),
             ],
           ),
-          Center(child: Text("2 page")),
+
+          TabBarBar(),
           Center(child: Text("3 page")),
           Center(child: Text("4 Page")),
         ])
-    
       ),
     );
   }
