@@ -243,18 +243,23 @@ Widget buildAdvertismentPlace(){
                 primary: true,
                 itemCount: singleProductData.length, 
                 physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 0.7), itemBuilder: (context,index){
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 0.7), 
+                itemBuilder: (context,index){
             var data=singleProductData[index];
-
-// Single Product Widget is call here
-            
             return SingleProductWidget(
              productImage: data.productImage,
              productName: data.productName,
              productModel: data.productModel, 
              productPrice: data.productPrice, 
              productOldPrice: data.productOldPrice, 
-             onPressed: (){},);
+             onPressed: (){
+               PageRouting.goToNextPage(
+                                context: context, 
+                                navigateTo: DetailScreen(
+                                  data: data
+                                  ),
+                              );
+             },);
           }
           ),
           ),
@@ -265,7 +270,7 @@ Widget buildAdvertismentPlace(){
                   endIndent: 16,
                 ),
                 ShowAllWidget(
-                  leftText: "What\'s trending",
+                  leftText: "What's trending",
                 ),
                 buildTrendingProduct(
                   productImage:
@@ -302,7 +307,12 @@ Widget buildAdvertismentPlace(){
                         var data=singleProductData[index];
                         return SingleProductWidget(
                             onPressed: (){
-                              PageRouting.goToNextPage(context: context, navigateTo: DetailScreen(data: data));
+                              PageRouting.goToNextPage(
+                                context: context, 
+                                navigateTo: DetailScreen(
+                                  data: data
+                                  ),
+                              );
                             },
                          productImage: data.productImage,
                          productName: data.productName,

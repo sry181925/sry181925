@@ -11,7 +11,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class DetailScreen extends StatefulWidget {
   final SingleProductModel data;
-  DetailScreen({required this.data});
+  DetailScreen({ required this.data});
 
   @override
   _DetailScreenState createState() => _DetailScreenState();
