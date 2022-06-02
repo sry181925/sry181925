@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:e_jkmm/appcolors/app_colors.dart';
 import 'package:e_jkmm/screens/homepage/home_page.dart';
 import 'package:e_jkmm/screens/signup/signup_screen.dart';
@@ -12,6 +14,7 @@ import '../../stylies/login_screen_stylies.dart';
 //import 'package:cheap_charly/screens/homepage/home_page.dart';
 //import 'package:cheap_charly/screens/signup/signup_screen.dart';
 
+// ignore: use_key_in_widget_constructors
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -55,6 +58,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                 ),
               ),
+           
+          
               SizedBox(
                 width: 20,
               ),
@@ -73,9 +78,11 @@ class _LoginScreenState extends State<LoginScreen> {
             ],
           ),
         ),
+   
         SizedBox(
           height: 20,
         ),
+      
         Text(
           "Forgot password?",
           style: LoginScreenStylies.forgotPasswordStylies,
@@ -87,6 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget buildSocialButton({required Widget child, required Function onPressed}) {
     return MaterialButton(
       shape: OutlineInputBorder(
+     
         borderSide: BorderSide(
           width: 0.5,
           color: AppColors.baseGrey40Color,
@@ -99,6 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget buildBottomPart({required BuildContext context}) {
+    // ignore: sized_box_for_whitespace
     return Container(
       height: 300,
       child: Column(

@@ -11,15 +11,18 @@ import 'package:flutter/material.dart';
 
 class TabBarBar extends StatelessWidget {
   final List<SingleProductModel>productData;
- // final List<CategoryProductModel> categoryProductData;
- TabBarBar({required this.productData, /*this.categoryProductData8*/});
+ //final List<CategoryProductModel> categoryProductData;
+ // ignore: prefer_const_constructors_in_immutables
+ TabBarBar({Key? key, required this.productData, /*this.categoryProductData8*/}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      // ignore: prefer_const_constructors
       physics: BouncingScrollPhysics(),
       shrinkWrap: true,
       primary: true,
       itemCount: colothsData.length,
+      // ignore: prefer_const_constructors
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, childAspectRatio: 0.7),
       itemBuilder: (context, index) {

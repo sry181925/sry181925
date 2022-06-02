@@ -5,10 +5,11 @@ class MyTextFromField extends StatelessWidget {
   final String hintText;
   bool obscureText = false;
 
-  MyTextFromField({required this.hintText, required this.obscureText});
+  MyTextFromField({Key? key, required this.hintText, required this.obscureText}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
+      // ignore: prefer_const_constructors
       margin: EdgeInsets.symmetric(
         horizontal: 20,
         vertical: 10,

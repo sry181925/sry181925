@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:e_jkmm/appcolors/app_colors.dart';
 import 'package:e_jkmm/stylies/signup_screen_stylies.dart';
 import 'package:e_jkmm/svgimages/svg_images.dart';
@@ -8,6 +10,7 @@ import 'package:flutter_svg/svg.dart';
 
 
 
+// ignore: use_key_in_widget_constructors
 class SignupScreen extends StatelessWidget {
   
   Widget buildTopPart() {
@@ -35,6 +38,7 @@ class SignupScreen extends StatelessWidget {
           obscureText: true,
         ),
         Container(
+          
           margin: EdgeInsets.symmetric(
             horizontal: 20,
             vertical: 10,
@@ -45,22 +49,28 @@ class SignupScreen extends StatelessWidget {
             text: "Create an account",
           ),
         ),
+       
         SizedBox(
           height: 20,
         ),
         RichText(
+        
           text: TextSpan(
             text: "By sigining up you agress to our\n\t",
             style: SignupScreenStylies.signInAgressStyle,
+            // ignore: prefer_const_literals_to_create_immutables
             children: <TextSpan>[
+         
               TextSpan(
                 text: "Terms\t",
                 style: SignupScreenStylies.termsTextStyle,
               ),
+            
               TextSpan(
                 text: "and\t",
                 style: SignupScreenStylies.andTextStyle,
               ),
+            
               TextSpan(
                 text: "Conditions of Use",
                 style: SignupScreenStylies.conditionsOfUseStyle,
@@ -76,6 +86,7 @@ class SignupScreen extends StatelessWidget {
     return MaterialButton(
       onPressed: onPressed(),
       shape: OutlineInputBorder(
+     
         borderSide: BorderSide(
           width: 0.5,
           color: AppColors.baseGrey40Color,
@@ -87,15 +98,18 @@ class SignupScreen extends StatelessWidget {
   }
 
   Widget buildBottomPart() {
+    // ignore: sized_box_for_whitespace
     return Container(
       height: 300,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+ 
           Text(
             "or sign in with social networks",
             style: SignupScreenStylies.signInSocialStyle,
           ),
+         
           SizedBox(
             height: 10,
           ),

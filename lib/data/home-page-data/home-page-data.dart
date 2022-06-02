@@ -1,94 +1,94 @@
-
+// ignore: file_names
 import 'package:e_jkmm/models/SingleProductModel.dart';
 
 List<SingleProductModel> singleProductData = [
   SingleProductModel(
-    productImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/57d461193168475e8eecab4501127ab6_9366/Falcon_Shoes_Pink_FX7196_01_standard.jpg',
+    productImage: 'https://img.joomcdn.net/46b1677f702ae73beb0ce9c3fe53bc2101ca20ac_original.jpeg',
     productModel: 'Sneakers',
     productName: 'Falcon Clear Pink',
     productOldPrice: 105,
     productPrice: 70,
-    productFourImage: 'https://media.endclothing.com/media/f_auto,w_600,h_600/prodmedia/media/catalog/product/2/8/28-01-2020_adidas_falconw_clearpink_fv4660_jm_1.jpg',
-    productSecondImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/a8208eb34e7249f280e0aae800f486cf_9366/Falcon_Shoes_Pink_FV4660_04_standard.jpg',
-    productThirdImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/46f2b6a4a05740aa9e83ac5d00e45b7f_9366/Falcon_Shoes_Pink_FV8278_05_standard.jpg'
+    productFourImage: 'https://img.joomcdn.net/221ed03720a07b1149a8fc0fb65394bc40555d3b_original.jpeg',
+    productSecondImage: 'https://img.joomcdn.net/fe5db3eb1288501b55b26a511fc114fd01d5c57b_original.jpeg',
+    productThirdImage: 'https://img.joomcdn.net/2cfc00304ba8839fdb3af399326fecbd53885ed2_original.jpeg'
   ),
   SingleProductModel(
-    productImage:'https://assets.adidas.com/images/w_600,f_auto,q_auto/a143c8a9b9df4d1fb8faaaf600c68fce_9366/Essentials_Linear_Pants_Grey_FM6805_21_model.jpg',
+    productImage:'https://m.media-amazon.com/images/I/71yCPm-BJgL._UY550_.jpg',
     productModel: 'Hoodies',
     productName: 'Essentials Linear',
     productOldPrice: 80,
     productPrice: 60,
     productFourImage: 'https://images-na.ssl-images-amazon.com/images/I/31nJjFCCZkL._AC_.jpg',
-    productSecondImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/bb357021b59a4939926aa6a600c3d86f_9366/Essentials_Linear_Full_Zip_Hoodie_Black_S97076_21_model.jpg',
-    productThirdImage: 'https://resources.mandmdirect.com/Images/_default/a/d/1/ad17572_2_cloudzoom.jpg'
+    productSecondImage: 'https://m.media-amazon.com/images/I/71K5JSbid7L._UY550_.jpg',
+    productThirdImage: 'https://i.pinimg.com/originals/3e/82/39/3e8239d89c7c5096f2bdd42285d43433.jpg'
   ),
   SingleProductModel(
     productImage:
-        'https://assets.adidas.com/images/w_600,f_auto,q_auto/8659b39db18f46b9b913ab8300a8619f_9366/Own_the_Run_Tee_Black_FS9799_21_model.jpg',
+        'https://i2.wp.com/www.swagshirts99.com/wp-content/uploads/2019/04/EFC0992B-A264-45E9-B30B-BF2D7C05C5D3.jpeg?fit=960%2C962&ssl=1',
     productModel: 'T-Shirt',
     productName: 'Own The Run Tee',
     productOldPrice: 60,
     productPrice: 40,
-     productFourImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/0af6bfc6c13f4bf98aedab8300a88df6_9366/Own_the_Run_Tee_Black_FS9799.jpg',
-    productSecondImage: ' https://assets.adidas.com/images/w_600,f_auto,q_auto/cbb828b41d8e44d88cb7ab8300a87fe0_9366/Own_the_Run_Tee_Black_FS9799_23_hover_model.jpg',
-    productThirdImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/769a7d0b7e7e4ddda6f2ab8300a87188_9366/Own_the_Run_Tee_Black_FS9799_22_model.jpg'
+    productFourImage: 'https://i2.wp.com/www.swagshirts99.com/wp-content/uploads/2019/04/EFC0992B-A264-45E9-B30B-BF2D7C05C5D3.jpeg?fit=960%2C962&ssl=1',
+    productSecondImage: 'https://i2.wp.com/www.swagshirts99.com/wp-content/uploads/2019/04/EFC0992B-A264-45E9-B30B-BF2D7C05C5D3.jpeg?fit=960%2C962&ssl=1',
+    productThirdImage: 'https://i2.wp.com/www.swagshirts99.com/wp-content/uploads/2019/04/EFC0992B-A264-45E9-B30B-BF2D7C05C5D3.jpeg?fit=960%2C962&ssl=1'
   ),
- 
   SingleProductModel(
     productImage:
-        'https://assets.adidas.com/images/w_600,f_auto,q_auto/5ab31ab543704cb8a8d2a88700cfb627_9366/Ultimate365_Shorts_Grey_CE0447_21_model.jpg',
+        'https://images-eu.ssl-images-amazon.com/images/I/61jyIVEVtiL._AC._SR360,460.jpg',
     productModel: 'Shorts',
     productName: 'Ultimate 365',
     productOldPrice: 75,
     productPrice: 50,
-     productFourImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/04d68f347c284e0eab0aa8630173a44a_9366/Ultimate365_Shorts_Grey_CD9875.jpg',
-    productSecondImage: 'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/ac3e253fbd23450f95cfa8c1000d9ab5_9366/Ultimate365_Shorts_Grey_CE0448_21_model.jpg',
-    productThirdImage: 'https://images.sportsdirect.com/images/products/36700402_l_a1.jpg'
+     productFourImage: 'https://m.media-amazon.com/images/I/71NErkt4KrL._UY445_.jpg',
+    productSecondImage: 'https://m.media-amazon.com/images/I/719Gv1a9X-L._UY879_.jpg',
+    productThirdImage: 'https://m.media-amazon.com/images/I/71GmwLO7CaL._UX342_.jpg'
   ),
   SingleProductModel(
     productImage:
-        'https://assets.adidas.com/images/w_600,f_auto,q_auto/91b7dd603a0d4f178221a9b601126d2d_9366/POD-S3.1_Shoes_White_DB3537_01_standard.jpg',
+        'https://img.joomcdn.net/2cfc00304ba8839fdb3af399326fecbd53885ed2_original.jpeg',
     productModel: 'Sneakers',
     productName: 'Pod-S 3.1',
     productOldPrice: 140,
     productPrice: 100,
-     productFourImage: 'https://www.efootwear.eu/media/catalog/product/cache/image/650x650//0/0/0000200860794_04_ek.jpg',
-    productSecondImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/c8ed15f67e1f4921839ba9b60112b268_9366/POD-S3.1_Shoes_White_DB3537.jpg',
-    productThirdImage: 'https://www.efootwear.eu/media/catalog/product/cache/image/650x650//0/0/0000200860794_03_ek.jpg'
+     productFourImage: 'https://i.pinimg.com/736x/1e/01/fb/1e01fb4e4fe3dd6ec3095e1ea22fbd6c.jpg',
+    productSecondImage: 'https://my-test-11.slatic.net/p/d37067e6e05f1f8270f1883504c326f0.jpg',
+    productThirdImage: 'https://i.pinimg.com/736x/31/e3/76/31e37649ab8e62d957013e4d4ba28e48.jpg'
   ),
   SingleProductModel(
     productImage:
-        'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/954fbe41c9b444859004ab260121a23f_9366/Floral_Track_Jacket_Black_GE0314_21_model.jpg',
+        'https://cdna.lystit.com/400/500/n/photos/farfetch/6e098346/nike-Black-Floral-Track-Jacket.jpeg',
     productModel: 'Jackets',
     productName: 'Floral Track',
     productOldPrice: 140,
     productPrice: 99,
-     productFourImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/482aaea14d614549bbb9ab1a0115f306_9366/Floral_Track_Jacket_Black_GE0314_02_laydown.jpg',
-    productSecondImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/7fdea46b36f542bbbe12ab260127b2cc_9366/Floral_Track_Jacket_Black_GE0314.jpg',
-    productThirdImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/df298ef311c0490cb84eab260124bea5_9366/Floral_Track_Jacket_Black_GE0314_23_hover_model.jpg'
+     productFourImage: 'https://cdna.lystit.com/200/250/n/photos/farfetch/9259a879/nike-Black-Floral-Track-Jacket.jpeg',
+    productSecondImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2EmO3244GVhVhgvqi35wsLXJSGGp3O7orF4bmQuvIjkfnDV64AxLnkuxTOECo3EaO0X8&usqp=CAU',
+    productThirdImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA6wAS6w8orTSgMlF2dcAAmBIUiLRSKSy6tA&usqp=CAU'
   ),
   SingleProductModel(
     productImage:
-        'https://assets.adidas.com/images/w_600,f_auto,q_auto/5adc6dabf52a4b23a97baa060176638a_9366/Rivalry_RM_Low_Shoes_Beige_EE4989_01_standard.jpg',
+        'https://5.imimg.com/data5/SELLER/Default/2020/10/GG/IQ/UF/115418278/kids-boy-shoes-500x500.jpg',
     productModel: 'Sneakers',
     productName: 'Rivalry RM Low',
     productOldPrice: 158,
     productPrice: 130,
-     productFourImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/590d3dfc6f7c43f2a492aa070012601b_9366/Rivalry_RM_Low_Shoes_Beige_EE4989.jpg',
-    productSecondImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/64515af34c5844289b5daa060178bd6f_9366/Rivalry_RM_Low_Shoes_Beige_EE4989_05_standard.jpg',
-    productThirdImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/991b7aee890647449e80aa06017ee41c_9366/Rivalry_RM_Low_Shoes_Beige_EE4989_03_standard.jpg'
+     productFourImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_7ixMYRQpMbM0HfPAjVosm3JUgz0iKWlsVhDnBUJq-iPvXvIfgnIqWsGwqXIHrFSrbr0&usqp=CAU',
+    productSecondImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjN5B_pBfHHOqogP3Jm_ZJOwtdNMhCPSd7BJLsbxEAP_lu2bhRqtfPNl01t-U-AScF-Aw&usqp=CAU',
+    productThirdImage: 'https://img.joomcdn.net/cdb80a659866b8bcd2ddc11ed6a65d5edd0674da_original.jpeg'
   ),
- SingleProductModel(
+  SingleProductModel(
     productImage:
-        'https://assets.adidas.com/images/w_600,f_auto,q_auto/7bc377c6a8b549c1b823aa4e00882499_9366/Rivalry_RM_Low_Shoes_Black_EE4987_01_standard.jpg',
+        'https://img.joomcdn.net/cdb80a659866b8bcd2ddc11ed6a65d5edd0674da_original.jpeg',
     productModel: 'Sneakers',
     productName: 'Rivalry RM Low',
     productOldPrice: 158,
     productPrice: 130,
-     productFourImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/d142bbed034f488e850caa4e00885595_9366/Rivalry_RM_Low_Shoes_Black_EE4987.jpg',
-    productSecondImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/94da80a6059249629624aa4e0088612b_9366/Rivalry_RM_Low_Shoes_Black_EE4987_05_standard.jpg',
-    productThirdImage: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/d142bbed034f488e850caa4e00885595_9366/Rivalry_RM_Low_Shoes_Black_EE4987.jpg'
+     productFourImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_7ixMYRQpMbM0HfPAjVosm3JUgz0iKWlsVhDnBUJq-iPvXvIfgnIqWsGwqXIHrFSrbr0&usqp=CAU',
+    productSecondImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjN5B_pBfHHOqogP3Jm_ZJOwtdNMhCPSd7BJLsbxEAP_lu2bhRqtfPNl01t-U-AScF-Aw&usqp=CAU',
+    productThirdImage: 'https://img.joomcdn.net/cdb80a659866b8bcd2ddc11ed6a65d5edd0674da_original.jpeg'
   ),
+
 ];
 ////////////////////////////// Cloths.............
 List<SingleProductModel> colothsData = [

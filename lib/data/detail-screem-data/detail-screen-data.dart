@@ -1,9 +1,11 @@
+// ignore_for_file: file_names
+
 import 'package:e_jkmm/models/SingleProductModel.dart';
 
 List<SingleProductModel> detailScreenData = [
   SingleProductModel(
     productImage:
-        'https://assets.adidas.com/images/w_600,f_auto,q_auto/3e76e7dffa364e3389eca91200fd9a74_9366/POD-S3.1_Shoes_Black_B37366_07_standard.jpg',
+        'https://img.joomcdn.net/2cfc00304ba8839fdb3af399326fecbd53885ed2_original.jpeg',
     productModel: 'Sneakers',
     productName: 'Pod-S 3.1',
     productOldPrice: 140,
@@ -14,7 +16,7 @@ List<SingleProductModel> detailScreenData = [
   ),
   SingleProductModel(
     productImage:
-        'https://assets.adidas.com/images/w_600,f_auto,q_auto/5adc6dabf52a4b23a97baa060176638a_9366/Rivalry_RM_Low_Shoes_Beige_EE4989_01_standard.jpg',
+        'https://cdna.lystit.com/400/500/n/photos/farfetch/6e098346/nike-Black-Floral-Track-Jacket.jpeg',
     productModel: 'Jackets',
     productName: 'Floral Track',
     productOldPrice: 140,
@@ -25,7 +27,7 @@ List<SingleProductModel> detailScreenData = [
   ),
   SingleProductModel(
     productImage:
-        'https://assets.adidas.com/images/w_600,f_auto,q_auto/5adc6dabf52a4b23a97baa060176638a_9366/Rivalry_RM_Low_Shoes_Beige_EE4989_01_standard.jpg',
+        'https://5.imimg.com/data5/SELLER/Default/2020/10/GG/IQ/UF/115418278/kids-boy-shoes-500x500.jpg',
     productModel: 'Sneakers',
     productName: 'Rivalry RM Low',
     productOldPrice: 158,

@@ -1,4 +1,6 @@
 // ignore: import_of_legacy_library_into_null_safe
+// ignore_for_file: prefer_const_constructors
+
 import 'package:e_jkmm/routes/routes.dart';
 import 'package:e_jkmm/screens/detailscreen/detail_screen.dart';
 import 'package:e_jkmm/tabbar_data.dart';
@@ -19,31 +21,42 @@ class HomePage extends StatelessWidget{
 
 AppBar buildAppBar(){
 return AppBar(
+  
   bottom: TabBar(
       labelPadding: EdgeInsets.symmetric(horizontal: 20,),
+   
       indicator: BoxDecoration(
       color: Colors.transparent,
       ),
       isScrollable: true,
       indicatorSize: TabBarIndicatorSize.label ,
+     
       labelStyle: TextStyle(
       fontSize: 15,
       fontWeight: FontWeight.bold,
       ),
       unselectedLabelColor: AppColors.baseBlackColor,
+      // ignore: prefer_const_literals_to_create_immutables
       tabs: [
+     
         Text("All"),
+    
         Text("Clothing"),
+
         Text("Shoes"),
+      
         Text("Accesories"),
       ],
       ),
   backgroundColor: Colors.black12,
   elevation: 0.0,
   centerTitle: true,
+
+  // ignore: prefer_const_literals_to_create_immutables
   title: Column(children: [ Text("E-JKM",style: HomeScreenStylies.appBarUpperTitleStylies,),
   ],),
 actions: [
+
   IconButton(onPressed:(){}, icon: RotationTransition( turns: AlwaysStoppedAnimation(90/360),
   child: SvgPicture.asset(SvgImages.filter,
   color: AppColors.baseBlackColor,
@@ -61,7 +74,9 @@ actions: [
 
 Widget buildAdvertismentPlace(){
   return Padding(
+
   padding:EdgeInsets.all(10.0),
+  // ignore: sized_box_for_whitespace
   child: Container(height: 200,width: 300,
   child: ListView(
         children: [
@@ -71,10 +86,13 @@ Widget buildAdvertismentPlace(){
 //1st Image of Slider 
 
                 Container(
+               
                   margin: EdgeInsets.only(top:6.0,bottom:6.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
+               
                     image: DecorationImage(
+                   
                       image: NetworkImage("https://cdn.acowebs.com/wp-content/uploads/2019/02/Impact-of-eCommerce-On-Society.png"),
                       fit: BoxFit.cover,
                     ),
@@ -84,10 +102,13 @@ Widget buildAdvertismentPlace(){
  //2nd Image of Slider
 
                 Container(
+                 
                   margin: EdgeInsets.all(6.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
+                 
                     image: DecorationImage(
+                    
                       image: NetworkImage("https://thumbs.dreamstime.com/z/e-commerce-sale-discount-flat-vector-illustration-online-shopping-buyer-seeking-cheap-dresses-special-offers-womens-clothing-145448368.jpg"),
                       fit: BoxFit.cover,
                     ),
@@ -97,10 +118,13 @@ Widget buildAdvertismentPlace(){
 //3rd Image of Slider
 
                 Container(
+               
                   margin: EdgeInsets.only(top:6.0,bottom: 6.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
+                   
                     image: DecorationImage(
+                   
                       image: NetworkImage('https://img.freepik.com/free-vector/e-commerce-icon-robotic-hand-internet-shopping-online-purchase-add-cart_127544-586.jpg?w=2000 '),
                       fit: BoxFit.cover,
                     ),
@@ -109,10 +133,13 @@ Widget buildAdvertismentPlace(){
                   
 //4th Image of Slider
                 Container(
+            
                   margin: EdgeInsets.only(top:6.0,bottom: 6.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
+             
                     image: DecorationImage(
+                  
                       image: NetworkImage('https://www.hubspot.com/hubfs/ecommerce%20busines.jpg'),
                       fit: BoxFit.cover,
                     ),
@@ -176,6 +203,7 @@ Widget buildAdvertismentPlace(){
           ),
           Expanded(
             flex: 2,
+            // ignore: avoid_unnecessary_containers
             child: Container(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -238,11 +266,14 @@ Widget buildAdvertismentPlace(){
               buildAdvertismentPlace(),   
               ShowAllWidget(leftText: "New Arrival"), 
               Padding(
+             
               padding: EdgeInsets.symmetric(horizontal: 12.0 ),
               child: GridView.builder(shrinkWrap: true,
                 primary: true,
                 itemCount: singleProductData.length, 
+           
                 physics: NeverScrollableScrollPhysics(),
+             
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 0.7), 
                 itemBuilder: (context,index){
             var data=singleProductData[index];
@@ -265,6 +296,7 @@ Widget buildAdvertismentPlace(){
           ),
 //Images for the tranding product
 
+      
         Divider(
                   indent: 16,
                   endIndent: 16,
@@ -295,6 +327,7 @@ Widget buildAdvertismentPlace(){
                 ),
 
                 ShowAllWidget(leftText: "History"),
+                  // ignore: sized_box_for_whitespace
                   Container(
                   height: 260,
                   child: GridView.builder(
@@ -302,18 +335,19 @@ Widget buildAdvertismentPlace(){
                     shrinkWrap: true,
                     primary: true,
                     itemCount: singleProductData.length,
+               
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 1.5),
                     itemBuilder: (context,index){
                         var data=singleProductData[index];
                         return SingleProductWidget(
                             onPressed: (){
-                              PageRouting.goToNextPage(
+                            PageRouting.goToNextPage(
                                 context: context, 
                                 navigateTo: DetailScreen(
                                   data: data
                                   ),
                               );
-                            },
+                          },
                          productImage: data.productImage,
                          productName: data.productName,
                          productModel: data.productModel, 

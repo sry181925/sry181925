@@ -1,4 +1,4 @@
-// ignore: file_names
+
 class SingleProductModel {
   String productName;
   String productImage;

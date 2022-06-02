@@ -1,3 +1,6 @@
+
+// ignore_for_file: prefer_const_constructors
+
 import 'package:e_jkmm/appColors/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +11,7 @@ class SingleProductWidget extends StatefulWidget {
   final double productPrice;
   final double productOldPrice;
   final Function onPressed;
+  // ignore: use_key_in_widget_constructors, prefer_const_constructors_in_immutables
   SingleProductWidget({
     required this.productImage,
     required this.productName,
@@ -30,6 +34,7 @@ class _SingleProductWidgetState extends State<SingleProductWidget> {
      // onTap: widget.onPressed,
       child: Container(
         height: 250,
+       
         margin: EdgeInsets.all(10.0),
         decoration: BoxDecoration(
           color: Colors.transparent,
@@ -55,46 +60,55 @@ class _SingleProductWidgetState extends State<SingleProductWidget> {
               ),
             ),
             Padding(
+           
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                 
                   SizedBox(
                     height: 5,
                   ),
                   Text(
                     widget.productName,
                     overflow: TextOverflow.ellipsis,
+                   
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                 
                   SizedBox(
                     height: 5,
                   ),
                   Text(
                     widget.productModel,
                     overflow: TextOverflow.ellipsis,
+                    
                     style: TextStyle(
                       color: AppColors.baseDarkPinkColor,
                     ),
                   ),
+                 
                   SizedBox(
                     height: 5,
                   ),
                   Row(
+                    // ignore: duplicate_ignore
                     children: [
                       Text(
                         "\$ ${widget.productPrice}",
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
+              
                       SizedBox(
                         width: 15,
                       ),
                       Text(
                         "\$ ${widget.productOldPrice}",
                         overflow: TextOverflow.ellipsis,
+                
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             decoration: TextDecoration.lineThrough),

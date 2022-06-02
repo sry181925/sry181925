@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:e_jkmm/data/detail-screem-data/detail-screen-data.dart';
 import 'package:e_jkmm/models/SingleProductModel.dart';
 import 'package:e_jkmm/routes/routes.dart';
@@ -11,7 +13,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class DetailScreen extends StatefulWidget {
   final SingleProductModel data;
-  DetailScreen({ required this.data});
+  // ignore: prefer_const_constructors_in_immutables
+  DetailScreen({Key? key,  required this.data}) : super(key: key);
 
   @override
   _DetailScreenState createState() => _DetailScreenState();
@@ -23,13 +26,16 @@ class _DetailScreenState extends State<DetailScreen> {
 
   PreferredSize buildAppbar() {
     return PreferredSize(
+
       preferredSize: Size.fromHeight(70),
       child: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
+
         title: Text(
           "Reebok",
+   
           style: TextStyle(
             color: AppColors.baseBlackColor,
           ),
@@ -60,9 +66,11 @@ class _DetailScreenState extends State<DetailScreen> {
 
   buildListTile() {
     return ListTile(
+   
       leading: CircleAvatar(
         radius: 35,
         backgroundColor: Colors.transparent,
+   
         backgroundImage: NetworkImage(
           'https://i2.wp.com/www.logotaglines.com/wp-content/uploads/2018/04/Reebok-new-logo.png?resize=489%2C480&ssl=1',
         ),
@@ -75,6 +83,7 @@ class _DetailScreenState extends State<DetailScreen> {
             overflow: TextOverflow.ellipsis,
             style: DetailScreenStylies.commpanyTitleStyle,
           ),
+          
           SizedBox(
             height: 5,
           ),
@@ -91,6 +100,7 @@ class _DetailScreenState extends State<DetailScreen> {
             widget.data.productPrice.toString(),
             style: DetailScreenStylies.productPriceStyle,
           ),
+      
           SizedBox(
             height: 5,
           ),
@@ -105,6 +115,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
   buildProductImages() {
     return Padding(
+  
       padding: EdgeInsets.all(8.0),
       child: Column(
         children: [
@@ -119,6 +130,7 @@ class _DetailScreenState extends State<DetailScreen> {
             children: [
               Expanded(
                 child: Container(
+              
                   margin: EdgeInsets.only(right: 15, top: 15),
                   child: Image.network(widget.data.productSecondImage),
                 ),
@@ -148,6 +160,7 @@ class _DetailScreenState extends State<DetailScreen> {
         Expanded(
           child: DropButton(
             hintText: "Color",
+          
             item: ["red", "blue", "white", "black", "pink"],
             ratingController: _ratingController,
           ),
@@ -196,7 +209,7 @@ class _DetailScreenState extends State<DetailScreen> {
           title: Wrap(
             children: [
               Text(
-                "this woman\'s tank top is designed to help you\nstay cool. it\'s made of stretchy and breathable\nfabric that moves heat away from your skin\n",
+                "this woman's tank top is designed to help you\nstay cool. it 's made of stretchy and breathable\nfabric that moves heat away from your skin\n",
                 style: TextStyle(
                   fontSize: 16,
                 ),
@@ -284,6 +297,7 @@ class _DetailScreenState extends State<DetailScreen> {
   }
 
   buildBottomGridView() {
+    // ignore: sized_box_for_whitespace
     return Container(
       height: 240,
       child: GridView.builder(
