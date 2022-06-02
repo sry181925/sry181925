@@ -290,7 +290,7 @@ class _DetailScreenState extends State<DetailScreen> {
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
         primary: true,
-       // itemCount: detailScreenData.length,
+       itemCount: detailScreenData.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 1,
           childAspectRatio: 1.5,
