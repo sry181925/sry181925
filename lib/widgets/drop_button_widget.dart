@@ -7,7 +7,8 @@ class DropButton extends StatefulWidget {
   final String hintText;
   String ratingController;
   final List<String> item;
-  DropButton({Key? key, required this.hintText, required this.ratingController, required this.item}) : super(key: key);
+  // ignore: use_key_in_widget_constructors
+  DropButton({required this.hintText, required this.ratingController, required this.item});
   @override
   _DropButtonState createState() => _DropButtonState();
 }
@@ -31,13 +32,8 @@ class _DropButtonState extends State<DropButton> {
           style: DetailScreenStylies.productDropDownValueStyle,
         ),
         value: widget.ratingController,
-        items: widget.item
-            .map((e) => DropdownMenuItem(
-                  child: Text(e),
-                  value: e,
-                ))
-            .toList(),
-        onChanged: (value) {
+        items: widget.item.map((e)=> DropdownMenuItem(child: Text(e), value: e,)).toList(),
+        onChanged: (value){
           setState(() {
             widget.ratingController = value!;
           });

@@ -1,19 +1,16 @@
 // ignore: import_of_legacy_library_into_null_safe
 // ignore_for_file: prefer_const_constructors
-
+import 'package:flutter/material.dart';
 import 'package:e_jkmm/routes/routes.dart';
 import 'package:e_jkmm/screens/detailscreen/detail_screen.dart';
 import 'package:e_jkmm/tabbar_data.dart';
-import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
 import 'package:e_jkmm/appcolors/app_colors.dart';
 import 'package:e_jkmm/data/home-page-data/home-page-data.dart';
 import 'package:e_jkmm/stylies/home_screen_stylies.dart';
 import 'package:e_jkmm/svgimages/svg_images.dart';
 import 'package:e_jkmm/widgets/show_all_widget.dart';
 import 'package:e_jkmm/widgets/singleProduct_widget.dart';
-
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatelessWidget{
@@ -191,6 +188,7 @@ Widget buildAdvertismentPlace(){
       height: 65,
       child: Row(
         children: [
+         
           Expanded(
             flex: 2,
             child: Material(
@@ -264,16 +262,14 @@ Widget buildAdvertismentPlace(){
  // Advertisment function call here 
              
               buildAdvertismentPlace(),   
+              
               ShowAllWidget(leftText: "New Arrival"), 
               Padding(
-             
               padding: EdgeInsets.symmetric(horizontal: 12.0 ),
               child: GridView.builder(shrinkWrap: true,
                 primary: true,
                 itemCount: singleProductData.length, 
-           
                 physics: NeverScrollableScrollPhysics(),
-             
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 0.7), 
                 itemBuilder: (context,index){
             var data=singleProductData[index];
@@ -294,13 +290,12 @@ Widget buildAdvertismentPlace(){
           }
           ),
           ),
-//Images for the tranding product
-
-      
         Divider(
                   indent: 16,
                   endIndent: 16,
                 ),
+//Images for the tranding product
+
                 ShowAllWidget(
                   leftText: "What's trending",
                 ),

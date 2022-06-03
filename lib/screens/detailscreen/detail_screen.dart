@@ -13,13 +13,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class DetailScreen extends StatefulWidget {
   final SingleProductModel data;
-  // ignore: prefer_const_constructors_in_immutables
+
   DetailScreen({Key? key,  required this.data}) : super(key: key);
 
   @override
   _DetailScreenState createState() => _DetailScreenState();
 }
-
 class _DetailScreenState extends State<DetailScreen> {
   late String _ratingController;
   late String _sizeController;
@@ -115,7 +114,6 @@ class _DetailScreenState extends State<DetailScreen> {
 
   buildProductImages() {
     return Padding(
-  
       padding: EdgeInsets.all(8.0),
       child: Column(
         children: [
@@ -160,7 +158,6 @@ class _DetailScreenState extends State<DetailScreen> {
         Expanded(
           child: DropButton(
             hintText: "Color",
-          
             item: ["red", "blue", "white", "black", "pink"],
             ratingController: _ratingController,
           ),
