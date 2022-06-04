@@ -1,9 +1,10 @@
 // ignore: import_of_legacy_library_into_null_safe
 // ignore_for_file: prefer_const_constructors
+import 'package:e_jkmm/screens/tabbar/tabbar_data.dart';
 import 'package:flutter/material.dart';
 import 'package:e_jkmm/routes/routes.dart';
 import 'package:e_jkmm/screens/detailscreen/detail_screen.dart';
-import 'package:e_jkmm/tabbar_data.dart';
+//import 'package:e_jkmm/tabbar_data.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_jkmm/appcolors/app_colors.dart';
 import 'package:e_jkmm/data/home-page-data/home-page-data.dart';
@@ -266,7 +267,8 @@ Widget buildAdvertismentPlace(){
               ShowAllWidget(leftText: "New Arrival"), 
               Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.0 ),
-              child: GridView.builder(shrinkWrap: true,
+              child: GridView.builder(
+                shrinkWrap: true,
                 primary: true,
                 itemCount: singleProductData.length, 
                 physics: NeverScrollableScrollPhysics(),

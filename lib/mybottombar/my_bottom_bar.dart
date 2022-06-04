@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:e_jkmm/appcolors/app_colors.dart';
+import 'package:e_jkmm/screens/category/category_screen.dart';
 import 'package:e_jkmm/screens/homepage/home_page.dart';
+import 'package:e_jkmm/screens/yourbag/your_bag_screen.dart';
 import 'package:flutter/material.dart';
 
 // ignore: use_key_in_widget_constructors
@@ -19,14 +21,8 @@ class _MyBottomBarState extends State<MyBottomBar> {
   // ignore: prefer_final_fields
   static  List<Widget> _widgetOptions = <Widget>[
    HomePage(),
-    Text(
-      '2 page',
-      style: optionStyle,
-    ),
-    Text(
-      '3 page',
-      style: optionStyle,
-    ),
+   CategoryScreen(),
+   YourBagScreen(),
     Text(
       '4 paGE',
       style: optionStyle,

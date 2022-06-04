@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:e_jkmm/data/detail-screem-data/detail-screen-data.dart';
 import 'package:e_jkmm/models/SingleProductModel.dart';
 import 'package:e_jkmm/routes/routes.dart';
@@ -14,7 +13,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 class DetailScreen extends StatefulWidget {
   final SingleProductModel data;
 
-  DetailScreen({Key? key,  required this.data}) : super(key: key);
+  
+  // ignore: prefer_const_constructors_in_immutables
+  DetailScreen({Key? key, required this.data}) : super(key: key);
 
   @override
   _DetailScreenState createState() => _DetailScreenState();
@@ -34,7 +35,6 @@ class _DetailScreenState extends State<DetailScreen> {
 
         title: Text(
           "Reebok",
-   
           style: TextStyle(
             color: AppColors.baseBlackColor,
           ),
@@ -311,10 +311,11 @@ class _DetailScreenState extends State<DetailScreen> {
           return SingleProductWidget(
             onPressed: () {
               PageRouting.goToNextPage(
-                context: context,
+              
                 navigateTo: DetailScreen(
                   data: data,
                 ),
+                  context: context,
               );
             },
             productImage: data.productImage,

@@ -37,6 +37,7 @@ dependencies:
   flutter_svg: ^0.22.0
   carousel_slider: ^4.1.1
   custom_navigator: ^0.3.0
+  custom_navigation_bar: ^0.8.2
   
 
 
