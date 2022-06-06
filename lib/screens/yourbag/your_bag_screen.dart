@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables
 
 import 'package:e_jkmm/appColors/app_colors.dart';
+//import 'package:e_jkmm/screens/detailscreen/detail_screen.dart';
+//import 'package:e_jkmm/data/detail-screem-data/detail-screen-data.dart';
+import 'package:e_jkmm/screens/homepage/home_page.dart';
 import 'package:e_jkmm/routes/routes.dart';
 import 'package:e_jkmm/stylies/detail_screen_stylies.dart';
 import 'package:e_jkmm/svgimages/svg_images.dart';
@@ -15,14 +18,10 @@ class YourBagScreen extends StatefulWidget {
 }
 
 class _YourBagScreenState extends State<YourBagScreen> {
-  late String myController;
-   // String sizeController;
-  //String colorsController;
-  // String quantityController;
    var cartData;
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.black12,
       elevation: 0,
       actions: [
         IconButton(
@@ -34,11 +33,14 @@ class _YourBagScreenState extends State<YourBagScreen> {
           ),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {PageRouting.goToNextPage(
+                       context: context,
+                       navigateTo: HomePage(),
+                   ); },
           icon: SvgPicture.asset(
             SvgImages.delete,
             color: AppColors.baseBlackColor,
-            width: 30,
+            width: 40,
           ),
         )
       ],
@@ -46,7 +48,11 @@ class _YourBagScreenState extends State<YourBagScreen> {
   }
 
   Widget buildSignleBag() {
+    var quantityController;
+    var sizeController;
+    var colorsController;
     return Card(
+      // ignore: sized_box_for_whitespace
       child: Container(
         height: 200,
         child: Column(
@@ -64,7 +70,7 @@ class _YourBagScreenState extends State<YourBagScreen> {
                           borderRadius: BorderRadius.circular(10.0),
                           image: DecorationImage(
                             image: NetworkImage(
-                              'https://kickz.akamaized.net/en/media/images/p/600/adidas_originals-3_STRIPES_T_Shirt-white_-2.jpg',
+                              'https://i.pinimg.com/originals/9b/c0/9c/9bc09c5d78671e8c34c7549fd84d4dd4.jpg',
                             ),
                             // ""),
                           ),
@@ -82,7 +88,7 @@ class _YourBagScreenState extends State<YourBagScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
-                            '3 stripes shirt',
+                            'stripes shirt',
                             style: TextStyle(
                               fontSize: 16,
                               color: AppColors.baseBlackColor,
@@ -154,7 +160,7 @@ class _YourBagScreenState extends State<YourBagScreen> {
                         "Size",
                         style: DetailScreenStylies.productDropDownValueStyle,
                       ),
-                      value: myController,
+                      value: sizeController,
                       items: ["M", "L", "S", "ML"]
                           .map(
                             (e) => DropdownMenuItem(
@@ -163,11 +169,12 @@ class _YourBagScreenState extends State<YourBagScreen> {
                             ),
                           )
                           .toList(),
-                      onChanged: (value) {
+                      onChanged: ( value) async {
+                        assert(value != null);
                         setState(() {
-                          myController = value!;
+                          sizeController = value;
                         });
-                      },
+                    },
                     ),
                   ),
                   Expanded(
@@ -184,7 +191,7 @@ class _YourBagScreenState extends State<YourBagScreen> {
                         "Colors",
                         style: DetailScreenStylies.productDropDownValueStyle,
                       ),
-                      value: myController,
+                      value: colorsController,
                       items: ["Red", "Green", "Blue", "Pink"]
                           .map(
                             (e) => DropdownMenuItem(
@@ -195,7 +202,7 @@ class _YourBagScreenState extends State<YourBagScreen> {
                           .toList(),
                       onChanged: (value) {
                         setState(() {
-                          myController = value!;
+                        colorsController = value;
                         });
                       },
                     ),
@@ -214,7 +221,7 @@ class _YourBagScreenState extends State<YourBagScreen> {
                         "Quantity",
                         style: DetailScreenStylies.productDropDownValueStyle,
                       ),
-                      value: myController,
+                      value: quantityController,
                       items: ["1", "2", "3", "4", "5"]
                           .map(
                             (e) => DropdownMenuItem(
@@ -224,7 +231,7 @@ class _YourBagScreenState extends State<YourBagScreen> {
                           )
                           .toList(),
                       onChanged: (value)=> setState(() {
-                          myController = value!;
+                          quantityController = value;
                         }),
                     ),
                   ),
@@ -251,10 +258,10 @@ class _YourBagScreenState extends State<YourBagScreen> {
               children: [
            
                 Text(
-                  "Your bag",
+                  "Your Bag",
            
                   style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 22,
                     color: AppColors.baseBlackColor,
                     fontWeight: FontWeight.bold,
                   ),
@@ -265,8 +272,7 @@ class _YourBagScreenState extends State<YourBagScreen> {
                 ),
    
                 Text(
-                  "You have 3 items in your bag",
-                  
+                  "You have 5 items in your bag",
                   style: TextStyle(
                     color: AppColors.baseGrey60Color,
                   ),
@@ -274,8 +280,8 @@ class _YourBagScreenState extends State<YourBagScreen> {
                buildSignleBag(),
                buildSignleBag(),
                buildSignleBag(),
-               //buildSignleBag(),
-              // buildSignleBag(),
+               buildSignleBag(),
+               buildSignleBag(),
                 Padding(
                  
                   padding: EdgeInsets.all(10.0),
@@ -375,11 +381,11 @@ class _YourBagScreenState extends State<YourBagScreen> {
                     ],
                   ),
                 ),
-                Container(
+           Container(
                   margin: EdgeInsets.all(20),
                   child: MyButtonWidget(
                     color: AppColors.baseDarkPinkColor,
-                    text: "Checkout",
+                    text: "Checkout" ,
                     onPress: () {
                      // PageRouting.goToNextPage(
                      //   context: context,
@@ -387,12 +393,14 @@ class _YourBagScreenState extends State<YourBagScreen> {
                    //   );
                     },
                   ),
-                )
+                ),
               ],
             ),
-          )
+          ),   
         ],
+        
       ),
+      
     );
   }
 }

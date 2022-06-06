@@ -1,5 +1,5 @@
 // ignore: file_names
-import 'package:e_jkmm/models/SingleProductModel.dart';
+import'package:e_jkmm/models/SingleProductModel.dart';
 
 List<SingleProductModel> singleProductData = [
   SingleProductModel(

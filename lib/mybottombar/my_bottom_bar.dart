@@ -3,6 +3,10 @@
 import 'package:e_jkmm/appcolors/app_colors.dart';
 import 'package:e_jkmm/screens/category/category_screen.dart';
 import 'package:e_jkmm/screens/homepage/home_page.dart';
+import 'package:e_jkmm/screens/profilescreen/profile_screen.dart';
+//import 'package:e_jkmm/screens/loginscreens/login.dart';
+//import 'package:e_jkmm/screens/signup/signup_screen.dart';
+import 'package:e_jkmm/screens/wishList/wish_list_screen.dart';
 import 'package:e_jkmm/screens/yourbag/your_bag_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +20,7 @@ class MyBottomBar extends StatefulWidget {
 
 class _MyBottomBarState extends State<MyBottomBar> {
   int _selectedIndex = 0;
+  // ignore: unused_field
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   // ignore: prefer_final_fields
@@ -23,14 +28,9 @@ class _MyBottomBarState extends State<MyBottomBar> {
    HomePage(),
    CategoryScreen(),
    YourBagScreen(),
-    Text(
-      '4 paGE',
-      style: optionStyle,
-    ),
-    Text(
-      '5 PAGE',
-      style: optionStyle,
-    ),
+   WishListScreen(),
+   ProfileScreen(),
+   
   ];
 
   void _onItemTapped(int index) {

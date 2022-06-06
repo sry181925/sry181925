@@ -9,11 +9,7 @@ import 'package:e_jkmm/widgets/textfromfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:e_jkmm/routes/routes.dart';
-
 import '../../stylies/login_screen_stylies.dart';
-//import 'package:cheap_charly/screens/homepage/home_page.dart';
-//import 'package:cheap_charly/screens/signup/signup_screen.dart';
-
 // ignore: use_key_in_widget_constructors
 class LoginScreen extends StatefulWidget {
   @override

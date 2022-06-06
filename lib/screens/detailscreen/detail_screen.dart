@@ -2,6 +2,7 @@
 import 'package:e_jkmm/data/detail-screem-data/detail-screen-data.dart';
 import 'package:e_jkmm/models/SingleProductModel.dart';
 import 'package:e_jkmm/routes/routes.dart';
+import 'package:e_jkmm/screens/yourbag/your_bag_screen.dart';
 import 'package:e_jkmm/stylies/detail_screen_stylies.dart';
 import 'package:e_jkmm/svgimages/svg_images.dart';
 import 'package:e_jkmm/appColors/app_colors.dart';
@@ -14,8 +15,8 @@ class DetailScreen extends StatefulWidget {
   final SingleProductModel data;
 
   
-  // ignore: prefer_const_constructors_in_immutables
-  DetailScreen({Key? key, required this.data}) : super(key: key);
+  // ignore: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
+  DetailScreen({ required this.data});
 
   @override
   _DetailScreenState createState() => _DetailScreenState();
@@ -283,11 +284,10 @@ class _DetailScreenState extends State<DetailScreen> {
           style: DetailScreenStylies.buttonTextStyle,
         ),
         onPressed: () {
-        //  PageRouting.goToNextPage(
-          //  context: context,
-         // navigateTo: YourBagScreen(
-            //),
-          //);
+        PageRouting.goToNextPage(
+          context: context,
+         navigateTo: YourBagScreen(),
+        );
         },
       ),
     );

@@ -34,7 +34,7 @@ class CategoryMenTabBar extends StatelessWidget {
           //fillClothData[index]
           navigateTo: SubCategory(
             productModel: data.productModel,
-            productData: colothsData,
+            productData: shoesData,
             productName: data.productName,
           ),
           context: context,
