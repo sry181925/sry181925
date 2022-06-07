@@ -12,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
     return AppBar(
       elevation: 0.70,
       centerTitle: true,
-      backgroundColor: Colors.white30,
+      backgroundColor: Colors.black12,
    
       title: Text(
         "My Account",
@@ -98,107 +98,93 @@ class ProfileScreen extends StatelessWidget {
      
         physics: BouncingScrollPhysics(),
         children: [
+
+// Con for all Profile and Product details         
+
           Container(
-            height: 200,
-       
+            height: 170.0,     
             margin: EdgeInsets.only(bottom: 10),
-            color: AppColors.baseWhiteColor,
+            color: AppColors.baseGrey20Color,
             child: Padding(
-              
               padding: EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
                
+
+// User profile image 
+  // ignore: prefer_const_literals_to_create_immutables
+  children: [
                   Center(
-                  
                     child: CircleAvatar(
-                      radius: 35,
+                      radius: 40,
                       backgroundColor: Colors.transparent,
-                  
                       backgroundImage: NetworkImage(
-                          "https://i.pinimg.com/originals/7b/48/65/7b48654b92587f3df86c21d7071bad42.jpg"),
+                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM-afEHBOE4PokKMQyuaj1Rp4Gl7_zGKXjmg&usqp=CAU"),
                     ),
                   ),
-             
+
+//User Name ,Address detail is here
                   Text(
-                    " Saurabh Yadav",
-                    
+                    "Saurabh Yadav",    
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
-                  ),
-                
+                  ),              
                   Text(
-                    "Noida",
+                    "Noida, Uttar Pradesh",
                     textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16),
                   )
+              
                 ],
               ),
             ),
           ),
+
+// Con for User detail and user  order, bag and wishlist details  here
+
           Container(
-           
             margin: EdgeInsets.only(bottom: 20),
             color: AppColors.baseWhiteColor,
             child: Column(
               children: [
-                buildlistTileWidget(
-                    leading: "Full name", trailing: "Saurabh yadav"),
-              
+                buildlistTileWidget(leading: "Full name", trailing: "Saurabh yadav"),
                 Divider(),
-                buildlistTileWidget(
-                  leading: "Email",
-                  trailing: "saurabh@jkm",
-                ),
-              
+                buildlistTileWidget(leading: "Email",trailing: "saurabh@jkm"),
                 Divider(),
-                buildlistTileWidget(
-                  leading: "Address",
-                  trailing: "1234567",
-                ),
-           
+                buildlistTileWidget(leading: "Address",trailing: "1234567"),
                 Divider(),
-                buildlistTileWidget(
-                  leading: "Payment",
-                  trailing: "6011\t****\t****\t1117",
+                buildlistTileWidget(leading: "Payment",trailing: "60**03"
                 ),
               ],
             ),
           ),
+
           Container(
             margin: EdgeInsets.only(bottom: 10),
             color: AppColors.baseWhiteColor,
             child: Column(
               children: [
-                buildBottomListTile(
-                  leading: "Wish-list",
-                  trailing: "5",
-                ),
-                // ignore: prefer_const_constructors
+                buildBottomListTile(leading: "Wish-list",trailing: "5"),
                 Divider(),
-                buildBottomListTile(
-                  leading: "My bag",
-                  trailing: "3",
-                ),
-                // ignore: prefer_const_constructors
+                buildBottomListTile(leading: "My bag",trailing: "3"),
                 Divider(),
-                buildBottomListTile(
-                  leading: "My orders",
-                  trailing: "1 in transit",
-                ),
+                buildBottomListTile(leading: "My orders",trailing: "1 in transit"),
               ],
             ),
+
+//Logout button use here
+
           ),
           Container(
-            // ignore: prefer_const_constructors
+            height: 50,
             margin: EdgeInsets.all(20.0),
-            child: MyButtonWidget(
-              color: AppColors.baseDarkPinkColor,
-              onPress: () {},
-              text: "Log out",
+            child: RaisedButton(onPressed:(){},
+            child: Text("Log out", style: TextStyle(color: Colors.white, fontSize: 16,fontWeight: FontWeight.bold),),
+            color: AppColors.baseDarkPinkColor,
+             shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
             ),
           ),
         ],

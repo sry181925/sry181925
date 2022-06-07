@@ -108,7 +108,7 @@ class _SubCategoryState extends State<SubCategory> {
   AppBar buildAppBar() {
     return AppBar(
       elevation: 0,
-      backgroundColor: Colors.transparent,
+      backgroundColor:Colors.black12,
       actions: [
         IconButton(
           icon: RotationTransition(

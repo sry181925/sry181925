@@ -1,6 +1,7 @@
-// ignore: import_of_legacy_library_into_null_safe
 // ignore_for_file: prefer_const_constructors
-//import 'package:e_jkmm/data/detail-screem-data/detail-screen-data.dart';
+
+import 'package:e_jkmm/screens/filtter/filterScreen.dart';
+import 'package:e_jkmm/screens/payment/payment_screen.dart';
 import 'package:e_jkmm/screens/tabbar/tabbar_data.dart';
 import 'package:flutter/material.dart';
 import 'package:e_jkmm/routes/routes.dart';
@@ -17,7 +18,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class HomePage extends StatelessWidget{
   const HomePage({Key? key}) : super(key: key);
 
-AppBar buildAppBar(){
+AppBar buildAppBar(BuildContext context){
 return AppBar(
   
   bottom: TabBar(
@@ -30,10 +31,12 @@ return AppBar(
       indicatorSize: TabBarIndicatorSize.label ,
      
       labelStyle: TextStyle(
-      fontSize: 15,
-      fontWeight: FontWeight.bold,
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
       ),
       unselectedLabelColor: AppColors.baseBlackColor,
+      labelColor: AppColors.baseDarkPinkColor,
+      automaticIndicatorColorAdjustment: false,
       // ignore: prefer_const_literals_to_create_immutables
       tabs: [
      
@@ -55,12 +58,19 @@ return AppBar(
   ],),
 actions: [
 
-  IconButton(onPressed:(){}, icon: RotationTransition( turns: AlwaysStoppedAnimation(90/360),
+  IconButton(onPressed:(){
+      PageRouting.goToNextPage(
+              context: context,
+              navigateTo: PaymentScreen(),
+            );
+  }, 
+  icon: RotationTransition( turns: AlwaysStoppedAnimation(90/360),
   child: SvgPicture.asset(SvgImages.filter,
   color: AppColors.baseBlackColor,
   width: 30,),),
   ),
-  IconButton(onPressed:(){}, icon:SvgPicture.asset(SvgImages.search,
+  IconButton(onPressed:(){},
+  icon:SvgPicture.asset(SvgImages.search,
   color: AppColors.baseBlackColor,
   width: 30,),
   )
@@ -90,6 +100,7 @@ Widget buildAdvertismentPlace(){
                     borderRadius: BorderRadius.circular(10.0),
                
                     image: DecorationImage(
+                   
                    
                       image: NetworkImage("https://cdn.acowebs.com/wp-content/uploads/2019/02/Impact-of-eCommerce-On-Society.png"),
                       fit: BoxFit.cover,
@@ -254,7 +265,7 @@ Widget buildAdvertismentPlace(){
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        appBar: buildAppBar(),
+        appBar: buildAppBar(context),
         body:TabBarView(children:[
           ListView(
             physics: BouncingScrollPhysics(),

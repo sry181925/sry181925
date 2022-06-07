@@ -2,6 +2,8 @@
 
 import 'package:e_jkmm/appColors/app_colors.dart';
 import 'package:e_jkmm/data/category-data/category.data.dart';
+import 'package:e_jkmm/routes/routes.dart';
+import 'package:e_jkmm/screens/filtter/filterScreen.dart';
 import 'package:e_jkmm/screens/tabbar/categorytabbar/category_all_tabbar.dart';
 import 'package:e_jkmm/screens/tabbar/categorytabbar/category_men_tabbar.dart';
 import 'package:e_jkmm/stylies/category_screen_stylies.dart';
@@ -19,7 +21,7 @@ class CategoryScreen extends StatefulWidget {
 class _CategoryScreenState extends State<CategoryScreen> {
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.black12,
       elevation: 0,
       centerTitle: true,
      
@@ -32,11 +34,16 @@ class _CategoryScreenState extends State<CategoryScreen> {
     
           turns: AlwaysStoppedAnimation(90 / 360),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () {
+               PageRouting.goToNextPage(
+              context: context,
+              navigateTo: FilterScreen(),
+               );
+            },
             icon: SvgPicture.asset(
               SvgImages.filter,
               color: AppColors.baseBlackColor,
-              width: 35,
+              width: 30,
             ),
           ),
         ),
@@ -44,7 +51,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
           icon: SvgPicture.asset(
             SvgImages.search,
             color: AppColors.baseBlackColor,
-            width: 35,
+            width: 30,
           ),
           onPressed: () {},
         )

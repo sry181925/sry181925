@@ -109,7 +109,7 @@ class _WishListScreenState extends State<WishListScreen> {
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.black12,
       elevation: 0,
       centerTitle: true,
       title: Text(

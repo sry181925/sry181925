@@ -1,13 +1,14 @@
-// ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables
+// ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables, deprecated_member_use
 
 import 'package:e_jkmm/appColors/app_colors.dart';
 //import 'package:e_jkmm/screens/detailscreen/detail_screen.dart';
 //import 'package:e_jkmm/data/detail-screem-data/detail-screen-data.dart';
 import 'package:e_jkmm/screens/homepage/home_page.dart';
 import 'package:e_jkmm/routes/routes.dart';
+import 'package:e_jkmm/screens/payment/payment_screen.dart';
 import 'package:e_jkmm/stylies/detail_screen_stylies.dart';
 import 'package:e_jkmm/svgimages/svg_images.dart';
-import 'package:e_jkmm/widgets/my_button_widget.dart';
+//import 'package:e_jkmm/widgets/my_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -25,7 +26,10 @@ class _YourBagScreenState extends State<YourBagScreen> {
       elevation: 0,
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {  PageRouting.goToNextPage(
+                       context: context,
+                       navigateTo: HomePage());
+                       },
           icon: SvgPicture.asset(
             SvgImages.heart,
             color: AppColors.baseBlackColor,
@@ -33,7 +37,8 @@ class _YourBagScreenState extends State<YourBagScreen> {
           ),
         ),
         IconButton(
-          onPressed: () {PageRouting.goToNextPage(
+          onPressed: () {
+            PageRouting.goToNextPage(
                        context: context,
                        navigateTo: HomePage(),
                    ); },
@@ -381,26 +386,29 @@ class _YourBagScreenState extends State<YourBagScreen> {
                     ],
                   ),
                 ),
-           Container(
-                  margin: EdgeInsets.all(20),
-                  child: MyButtonWidget(
-                    color: AppColors.baseDarkPinkColor,
-                    text: "Checkout" ,
-                    onPress: () {
-                     // PageRouting.goToNextPage(
-                     //   context: context,
-                       // navigateTo: PaymentScreen(),
-                   //   );
-                    },
-                  ),
-                ),
+
+                  // ignore: sized_box_for_whitespace
+                  Container(
+                    margin: EdgeInsets.all(20),
+            height: 50,
+            width: double.infinity,
+            child: RaisedButton(onPressed:(){ 
+                    PageRouting.goToNextPage(
+                    context: context,
+                    navigateTo: PaymentScreen(),
+                    );},
+            child: Text("Checkout", style: TextStyle(color: Colors.white, fontSize: 16,fontWeight: FontWeight.bold),),
+            color: AppColors.baseDarkPinkColor,
+             shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+            ),
+          ),
               ],
             ),
           ),   
         ],
         
       ),
-      
     );
   }
 }

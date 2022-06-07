@@ -84,6 +84,9 @@ flutter:
   - images/Layout.svg
   - images/Heart.svg
   - images/Splash.png
+  - images/elogo.png
+  - images/elogo2.png
+  - images/elogo3.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
