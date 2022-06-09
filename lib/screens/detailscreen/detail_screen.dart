@@ -2,6 +2,7 @@
 import 'package:e_jkmm/data/detail-screem-data/detail-screen-data.dart';
 import 'package:e_jkmm/models/SingleProductModel.dart';
 import 'package:e_jkmm/routes/routes.dart';
+import 'package:e_jkmm/screens/sizeguide/size_guide_screen.dart';
 import 'package:e_jkmm/screens/yourbag/your_bag_screen.dart';
 import 'package:e_jkmm/stylies/detail_screen_stylies.dart';
 import 'package:e_jkmm/svgimages/svg_images.dart';
@@ -160,14 +161,14 @@ class _DetailScreenState extends State<DetailScreen> {
           child: DropButton(
             hintText: "Color",
             item: ["red", "blue", "white", "black", "pink"],
-            ratingController: _ratingController,
+           ratingController: _ratingController,
           ),
         ),
         Expanded(
           child: DropButton(
             hintText: "Size",
             item: ["25", "30", "35", "40", "45"],
-            ratingController: _sizeController,
+           ratingController:_sizeController,
           ),
         )
       ],
@@ -255,10 +256,10 @@ class _DetailScreenState extends State<DetailScreen> {
                     minWidth: double.infinity,
                     color: AppColors.basewhite60Color,
                     onPressed: () {
-                    // PageRouting.goToNextPage(
-                       // context: context,
-                       // navigateTo: SizeGuideScreen(),
-                      //);
+                    PageRouting.goToNextPage(
+                   context: context,
+                  navigateTo: SizeGuideScreen(),
+                  );
                     },
                   )
                 ],
@@ -311,11 +312,10 @@ class _DetailScreenState extends State<DetailScreen> {
           return SingleProductWidget(
             onPressed: () {
               PageRouting.goToNextPage(
-              
+                context: context,
                 navigateTo: DetailScreen(
                   data: data,
                 ),
-                  context: context,
               );
             },
             productImage: data.productImage,

@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:e_jkmm/screens/filtter/filterScreen.dart';
-import 'package:e_jkmm/screens/payment/payment_screen.dart';
+import 'package:e_jkmm/screens/sizeguide/size_guide_screen.dart';
 import 'package:e_jkmm/screens/tabbar/tabbar_data.dart';
 import 'package:flutter/material.dart';
 import 'package:e_jkmm/routes/routes.dart';
@@ -58,10 +57,12 @@ return AppBar(
   ],),
 actions: [
 
+//Icon button for Filter products type  
+
   IconButton(onPressed:(){
       PageRouting.goToNextPage(
               context: context,
-              navigateTo: PaymentScreen(),
+              navigateTo: FilterScreen(),
             );
   }, 
   icon: RotationTransition( turns: AlwaysStoppedAnimation(90/360),
@@ -69,7 +70,14 @@ actions: [
   color: AppColors.baseBlackColor,
   width: 30,),),
   ),
-  IconButton(onPressed:(){},
+
+//Icon Button for search products
+
+  IconButton(onPressed:(){  PageRouting.goToNextPage(
+              context: context,
+              navigateTo: SizeGuideScreen(),
+            );
+  },
   icon:SvgPicture.asset(SvgImages.search,
   color: AppColors.baseBlackColor,
   width: 30,),

@@ -2,11 +2,9 @@
 
 import 'package:e_jkmm/appcolors/app_colors.dart';
 import 'package:e_jkmm/stylies/signup_screen_stylies.dart';
-import 'package:e_jkmm/svgimages/svg_images.dart';
-import 'package:e_jkmm/widgets/my_button_widget.dart';
 import 'package:e_jkmm/widgets/textfromfield_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 
 
@@ -38,36 +36,37 @@ class SignupScreen extends StatelessWidget {
           obscureText: true,
         ),
         Container(
-          
           margin: EdgeInsets.symmetric(
             horizontal: 20,
             vertical: 10,
           ),
-          child: MyButtonWidget(
-            onPress: () {},
-            color: AppColors.baseDarkPinkColor,
-            text: "Create an account",
-          ),
+          child:ElevatedButton(onPressed:(){},
+            child: Text( "Create an account", style: TextStyle(color: Colors.white, fontSize: 18,fontWeight: FontWeight.bold),),
+              style: ElevatedButton.styleFrom(
+              primary:  AppColors.baseDarkPinkColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10))),
+            ),
         ),
        
         SizedBox(
-          height: 20,
+          height: 30,
         ),
-        RichText(
         
+        RichText(
           text: TextSpan(
-            text: "By sigining up you agress to our\n\t",
+            text: "By sigining up you agress to our\n",
             style: SignupScreenStylies.signInAgressStyle,
             // ignore: prefer_const_literals_to_create_immutables
             children: <TextSpan>[
          
               TextSpan(
-                text: "Terms\t",
+                text: "Terms ",
                 style: SignupScreenStylies.termsTextStyle,
               ),
             
               TextSpan(
-                text: "and\t",
+                text: "and ",
                 style: SignupScreenStylies.andTextStyle,
               ),
             
@@ -81,22 +80,6 @@ class SignupScreen extends StatelessWidget {
       ],
     );
   }
-
-  Widget buildSocialButton({required Widget child, required Function onPressed}) {
-    return MaterialButton(
-      onPressed: onPressed(),
-      shape: OutlineInputBorder(
-     
-        borderSide: BorderSide(
-          width: 0.5,
-          color: AppColors.baseGrey40Color,
-        ),
-        borderRadius: BorderRadius.circular(5),
-      ),
-      child: child,
-    );
-  }
-
   Widget buildBottomPart() {
     // ignore: sized_box_for_whitespace
     return Container(
@@ -111,49 +94,38 @@ class SignupScreen extends StatelessWidget {
           ),
          
           SizedBox(
-            height: 10,
+            height: 20,
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                //facebook social button
-                buildSocialButton(
+
+//Google social button
+
+               SignInButton(
+                 Buttons.Google,
                   onPressed: () {},
-                  child: SvgPicture.asset(
-                    SvgImages.facebook,
-                    color: AppColors.baseBlackColor,
-                    width: 45,
-                  ),
-                ),
-                //Google social button
-                buildSocialButton(
+                                   ),
+
+// facebook social button
+
+              SignInButton(
+                 Buttons.Facebook,
                   onPressed: () {},
-                  child: SvgPicture.asset(
-                    SvgImages.google,
-                    color: AppColors.baseBlackColor,
-                    width: 45,
-                  ),
-                ),
-                //Twitter social button
-                buildSocialButton(
-                  onPressed: () {},
-                  child: SvgPicture.asset(
-                    SvgImages.twitter,
-                    color: AppColors.baseBlackColor,
-                    width: 45,
-                  ),
-                ),
+                                   ),
               ],
             ),
           ),
           Container(
             margin: EdgeInsets.all(20.0),
             child: MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+               
+              },
               color: AppColors.baseGrey10Color,
-              height: 55,
+              height: 50,
               elevation: 0,
               child: Center(
                 child: Text(
@@ -173,7 +145,8 @@ class SignupScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black12,
+        
       ),
       body: SafeArea(
         child: ListView(

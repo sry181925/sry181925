@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 //import 'package:e_jkmm/appColors/app_colors.dart';
-import 'package:e_jkmm/appcolors/app_colors.dart';
+//import 'package:e_jkmm/appcolors/app_colors.dart';
 import 'package:e_jkmm/mybottombar/my_bottom_bar.dart';
+//import 'package:e_jkmm/screens/loginscreens/login.dart';
 
 
 //import 'package:e_jkmm/screens/homepage/home_page.dart';

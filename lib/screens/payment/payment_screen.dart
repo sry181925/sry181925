@@ -2,12 +2,15 @@
 
 import 'package:e_jkmm/appColors/app_colors.dart';
 import 'package:e_jkmm/routes/routes.dart';
+import 'package:e_jkmm/screens/confirmation/confirmation_page.dart';
+//import 'package:e_jkmm/routes/routes.dart';
 import 'package:e_jkmm/svgimages/svg_images.dart';
 //import 'package:e_jkmm/widgets/my_button_widget.dart';
 import 'package:e_jkmm/widgets/textfromfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+// ignore: use_key_in_widget_constructors
 class PaymentScreen extends StatelessWidget {
 
   AppBar buildAppBar() {
@@ -116,12 +119,12 @@ class PaymentScreen extends StatelessWidget {
                       startAngle: 1.5,
                       endAngle: 3,
                       colors: const <Color>[
-                        Color.fromARGB(255, 209, 162, 9),
-                       Color.fromARGB(255, 209, 162, 9),
-                        Color.fromARGB(255, 153, 119, 7),
+                      Color.fromARGB(255, 209, 162, 9),
+                      Color.fromARGB(255, 209, 162, 9),
                       Color.fromARGB(255, 153, 119, 7),
-                       Color.fromARGB(255, 209, 162, 9),
-                       Color.fromARGB(255, 209, 162, 9),
+                      Color.fromARGB(255, 153, 119, 7),
+                      Color.fromARGB(255, 209, 162, 9),
+                      Color.fromARGB(255, 209, 162, 9),
                       ],
                       stops: const <double>[
                         0.0,
@@ -362,10 +365,10 @@ class PaymentScreen extends StatelessWidget {
                 width: double.infinity, 
                 margin: EdgeInsets.symmetric(horizontal: 23),
                 child: RaisedButton(onPressed:(){  
-                   // PageRouting.goToNextPage(
-                     // context: context,
-                     // navigateTo: ConfirmationPage(),
-                    //);
+                   PageRouting.goToNextPage(
+                     context: context,
+                     navigateTo: ConfirmationPage(),
+                    );
                 },
             child: Text("Confirmation", style: TextStyle(color: Colors.white, fontSize: 16,fontWeight: FontWeight.bold),),
             color: AppColors.baseDarkPinkColor,

@@ -5,7 +5,8 @@ class MyTextFromField extends StatelessWidget {
   final String hintText;
   bool obscureText = false;
 
-  MyTextFromField({Key? key, required this.hintText, required this.obscureText}) : super(key: key);
+  // ignore: use_key_in_widget_constructors
+  MyTextFromField({ required this.hintText, required this.obscureText});
   @override
   Widget build(BuildContext context) {
     return Container(

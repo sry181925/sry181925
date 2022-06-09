@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:e_jkmm/appColors/app_colors.dart';
+import 'package:e_jkmm/routes/routes.dart';
+import 'package:e_jkmm/screens/payment/payment_screen.dart';
 import 'package:e_jkmm/svgimages/svg_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -141,6 +143,33 @@ class _WishListScreenState extends State<WishListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: buildAppBar(),
+
+      body: ListView(
+        physics: BouncingScrollPhysics(),
+        children: [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                buildSignleBag(),
+                buildSignleBag(),
+                buildSignleBag(),
+                buildSignleBag(),
+                buildSignleBag(),
+                buildSignleBag(),
+                buildSignleBag(),
+                buildSignleBag(),
+                buildSignleBag(),
+                buildSignleBag(),
+                buildSignleBag(),
+                buildSignleBag(),
+              ],
+            ),
+          )
+        ],
+      ),
       // ignore: sized_box_for_whitespace
       bottomNavigationBar: Container(
         height: 100,
@@ -181,7 +210,9 @@ class _WishListScreenState extends State<WishListScreen> {
                 height: 55,
                 margin: EdgeInsets.all(10.0),
                 child: ElevatedButton.icon(
-                  onPressed: () {},
+                  onPressed: () { PageRouting.goToNextPage(
+                   context: context,
+                   navigateTo: PaymentScreen());},
                   style: ElevatedButton.styleFrom(
                     shape: BeveledRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
@@ -201,38 +232,17 @@ class _WishListScreenState extends State<WishListScreen> {
                       color: AppColors.baseWhiteColor,
                     ),
                   ),
-                  onLongPress: () {},
+                  onLongPress: () {
+                  PageRouting.goToNextPage(
+                   context: context,
+                   navigateTo: PaymentScreen()
+                   );
+                  },
                 ),
               ),
             ),
           ],
         ),
-      ),
-      appBar: buildAppBar(),
-      body: ListView(
-        physics: BouncingScrollPhysics(),
-        children: [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                buildSignleBag(),
-                buildSignleBag(),
-                buildSignleBag(),
-                buildSignleBag(),
-                buildSignleBag(),
-                buildSignleBag(),
-                buildSignleBag(),
-                buildSignleBag(),
-                buildSignleBag(),
-                buildSignleBag(),
-                buildSignleBag(),
-                buildSignleBag(),
-              ],
-            ),
-          )
-        ],
       ),
     );
   }

@@ -1,31 +1,32 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:e_jkmm/appcolors/app_colors.dart';
-import 'package:e_jkmm/screens/homepage/home_page.dart';
+import 'package:e_jkmm/mybottombar/my_bottom_bar.dart';
 import 'package:e_jkmm/screens/signup/signup_screen.dart';
-import 'package:e_jkmm/svgimages/svg_images.dart';
-import 'package:e_jkmm/widgets/my_button_widget.dart';
 import 'package:e_jkmm/widgets/textfromfield_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:e_jkmm/routes/routes.dart';
 import '../../stylies/login_screen_stylies.dart';
 // ignore: use_key_in_widget_constructors
 class LoginScreen extends StatefulWidget {
-  @override
-  _LoginScreenState createState() => _LoginScreenState();
+@override
+_LoginScreenState createState() => _LoginScreenState();
 }
-
-
 class _LoginScreenState extends State<LoginScreen> {
+
   Widget buildTopPart() {
     return Column(
       children: [
         Image.asset(
           "images/logo.png",
-          height: 150,
-        ),
-        Column(
+           height: 150,
+          width: 300,
+      ),
+
+      SizedBox(width: 20,),
+
+      Column(
           children: [
             MyTextFromField(
               hintText: "E-mail",
@@ -36,40 +37,42 @@ class _LoginScreenState extends State<LoginScreen> {
               obscureText: true,
             ),
           ],
-        ),
+      ),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.only(top: 30),
+          margin: EdgeInsets.symmetric(horizontal: 30),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
-                child: MyButtonWidget(
-                  text: "Sign in",
-                  color: AppColors.baseBlackColor,
-                  onPress: () {
-                   PageRouting.goToNextPage(
-                      context: context,
-                      navigateTo: HomePage(),
-                    );
-                  },
-                ),
-              ),
-           
-          
-              SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                child: MyButtonWidget(
-                  text: "Sign up",
-                  color: AppColors.baseDarkPinkColor,
-                  onPress: () {
+                child: ElevatedButton(onPressed:(){ 
                     PageRouting.goToNextPage(
-                      context: context,
-                      navigateTo: SignupScreen(),
-                    );
-                  },
-                ),
+                    context: context,
+                    navigateTo: MyBottomBar(),
+                    );},
+            child: Text("Sign In", style: TextStyle(color: Colors.white, fontSize: 18,fontWeight: FontWeight.bold),),
+              style: ElevatedButton.styleFrom(
+              primary: AppColors.baseBlackColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10))),
+            ),
+            ),
+
+              SizedBox(width: 20,),
+
+              Expanded(
+                  child: ElevatedButton(onPressed:(){ 
+                    PageRouting.goToNextPage(
+                    context: context,
+                    navigateTo: SignupScreen(),
+                    );},
+            child: Text("Sign Up", style: TextStyle(color: Colors.white, fontSize: 18,fontWeight: FontWeight.bold),),
+              style: ElevatedButton.styleFrom(
+              primary:   AppColors.baseDarkPinkColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10))),
+            ),
+                
               ),
             ],
           ),
@@ -78,30 +81,35 @@ class _LoginScreenState extends State<LoginScreen> {
         SizedBox(
           height: 20,
         ),
-      
-        Text(
+
+//Forget Text button        
+
+         Container(
+         padding: EdgeInsets.only(left: 10),
+            child: MaterialButton(
+              height: 55,
+              elevation: 0,
+              shape: OutlineInputBorder(
+                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Center(
+                child:   Text(
           "Forgot password?",
           style: LoginScreenStylies.forgotPasswordStylies,
         ),
+              ),
+              onPressed: () {
+                PageRouting.goToNextPage(
+                  context: context,
+                  navigateTo: SignupScreen(),
+                );
+              },
+            ),
+          ),
       ],
     );
   }
-
-  Widget buildSocialButton({required Widget child, required Function onPressed}) {
-    return MaterialButton(
-      shape: OutlineInputBorder(
-     
-        borderSide: BorderSide(
-          width: 0.5,
-          color: AppColors.baseGrey40Color,
-        ),
-        borderRadius: BorderRadius.circular(5),
-      ),
-      onPressed: onPressed(),
-      child: child,
-    );
-  }
-
   Widget buildBottomPart({required BuildContext context}) {
     // ignore: sized_box_for_whitespace
     return Container(
@@ -113,45 +121,29 @@ class _LoginScreenState extends State<LoginScreen> {
             "or sign in with social networks",
             style: LoginScreenStylies.signinSocialStylies,
           ),
-          SizedBox(
-            height: 5,
-          ),
           Padding(
             padding: EdgeInsets.all(20.0),
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                // facebook social button
-                buildSocialButton(
-                  onPressed: () {},
-                  child: SvgPicture.asset(
-                    SvgImages.facebook,
-                    color: AppColors.baseBlackColor,
-                    width: 45,
-                  ),
-                ),
+// google social button            
 
-                // google social button
-                buildSocialButton(
+                SignInButton(
+                 Buttons.Google,
                   onPressed: () {},
-                  child: SvgPicture.asset(
-                    SvgImages.google,
-                    color: AppColors.baseBlackColor,
-                    width: 45,
-                  ),
-                ),
-                // twitter social button
-                buildSocialButton(
+                                   ),
+
+// facebook social button
+              SignInButton(
+                 Buttons.Facebook,
                   onPressed: () {},
-                  child: SvgPicture.asset(
-                    SvgImages.twitter,
-                    color: AppColors.baseBlackColor,
-                    width: 45,
-                  ),
-                ),
+                                   ),
               ],
             ),
           ),
+   SizedBox(
+            height: 20,),
+
           Container(
             margin: EdgeInsets.all(20),
             child: MaterialButton(
@@ -183,10 +175,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+      return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.black12,
+      ),
       body: SafeArea(
-        child: Center(
-          child: ListView(
+        child:  ListView(
             physics: BouncingScrollPhysics(),
             children: [
               Column(
@@ -198,7 +193,6 @@ class _LoginScreenState extends State<LoginScreen> {
               )
             ],
           ),
-        ),
       ),
     );
   }

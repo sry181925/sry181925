@@ -392,15 +392,17 @@ class _YourBagScreenState extends State<YourBagScreen> {
                     margin: EdgeInsets.all(20),
             height: 50,
             width: double.infinity,
-            child: RaisedButton(onPressed:(){ 
+            child: ElevatedButton(onPressed:(){ 
                     PageRouting.goToNextPage(
                     context: context,
                     navigateTo: PaymentScreen(),
                     );},
             child: Text("Checkout", style: TextStyle(color: Colors.white, fontSize: 16,fontWeight: FontWeight.bold),),
-            color: AppColors.baseDarkPinkColor,
-             shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
+              style: ElevatedButton.styleFrom(
+              primary: AppColors.baseDarkPinkColor,
+              fixedSize: const Size(300, 100),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10))),
             ),
           ),
               ],

@@ -2,7 +2,6 @@
 
 import 'package:e_jkmm/appColors/app_colors.dart';
 import 'package:e_jkmm/stylies/detail_screen_stylies.dart';
-import 'package:e_jkmm/widgets/my_button_widget.dart';
 import 'package:flutter/material.dart';
 
 // ignore: use_key_in_widget_constructors
@@ -12,8 +11,8 @@ class FilterScreen extends StatefulWidget {
 }
 
 class _FilterScreenState extends State<FilterScreen> {
-  String? _ratingController;
-  String? _categoryController;
+   //var _ratingController;
+  //var _categoryController;
   RangeValues _currentRangeValues = const RangeValues(40, 80);
 
 // AppBar build is here  
@@ -70,7 +69,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       ),
                     )
                     .toList(),
-                onChanged: (String? value) {
+                onChanged: ( value) {
                   setState(
                     () {
                       value = value;
@@ -191,12 +190,10 @@ class _FilterScreenState extends State<FilterScreen> {
 
   @override
   Widget build(BuildContext context) {
- 
-    var ratingController;
-    var categoryController;
-
+   
+    var _ratingController;
+    var _categoryController;
     return Scaffold(
-
       appBar: buildAppBar(),
 
 // create filter body is here 
@@ -225,7 +222,7 @@ class _FilterScreenState extends State<FilterScreen> {
 //Gender dropdown value
 
           buildExpansionTil(
-            value: ratingController,
+          value: _ratingController,
             items: [
               "Woman",
               "Men",
@@ -240,7 +237,7 @@ class _FilterScreenState extends State<FilterScreen> {
 //Categories of  products dropdown value
 
           buildExpansionTil(
-            value: categoryController,
+            value: _categoryController,
             items: [
               "T-Shirt",
               "Jecket",
@@ -372,13 +369,16 @@ class _FilterScreenState extends State<FilterScreen> {
 
           buildPriceExpansionTile(),
 
-          
           Container(
             margin: EdgeInsets.all(20.0),
-            child: MyButtonWidget(
-              color: AppColors.baseDarkPinkColor,
-              onPress: () {},
-              text: "View more item",
+            child: ElevatedButton(
+              onPressed:(){},
+              child: Text("View more item"),
+              style: ElevatedButton.styleFrom(
+              primary: AppColors.baseDarkPinkColor,
+              fixedSize: const Size(300, 100),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10))),
             ),
           ),
         ],

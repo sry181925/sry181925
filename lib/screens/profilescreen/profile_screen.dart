@@ -2,7 +2,7 @@
 
 import 'package:e_jkmm/appColors/app_colors.dart';
 import 'package:e_jkmm/svgimages/svg_images.dart';
-import 'package:e_jkmm/widgets/my_button_widget.dart';
+//import 'package:e_jkmm/widgets/my_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -134,7 +134,7 @@ class ProfileScreen extends StatelessWidget {
                   Text(
                     "Noida, Uttar Pradesh",
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 14),
                   )
               
                 ],
@@ -180,11 +180,13 @@ class ProfileScreen extends StatelessWidget {
           Container(
             height: 50,
             margin: EdgeInsets.all(20.0),
-            child: RaisedButton(onPressed:(){},
-            child: Text("Log out", style: TextStyle(color: Colors.white, fontSize: 16,fontWeight: FontWeight.bold),),
-            color: AppColors.baseDarkPinkColor,
-             shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
+            child: ElevatedButton(onPressed:(){},
+            child: Text("Logout", style: TextStyle(color: Colors.white, fontSize: 16,fontWeight: FontWeight.bold),),
+            style: ElevatedButton.styleFrom(
+              primary: AppColors.baseDarkPinkColor,
+              fixedSize: const Size(300, 100),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10))),
             ),
           ),
         ],

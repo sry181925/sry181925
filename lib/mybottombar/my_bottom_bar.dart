@@ -4,11 +4,10 @@ import 'package:e_jkmm/appcolors/app_colors.dart';
 import 'package:e_jkmm/screens/category/category_screen.dart';
 import 'package:e_jkmm/screens/homepage/home_page.dart';
 import 'package:e_jkmm/screens/profilescreen/profile_screen.dart';
-//import 'package:e_jkmm/screens/loginscreens/login.dart';
-//import 'package:e_jkmm/screens/signup/signup_screen.dart';
 import 'package:e_jkmm/screens/wishList/wish_list_screen.dart';
 import 'package:e_jkmm/screens/yourbag/your_bag_screen.dart';
 import 'package:flutter/material.dart';
+
 
 // ignore: use_key_in_widget_constructors
 class MyBottomBar extends StatefulWidget {

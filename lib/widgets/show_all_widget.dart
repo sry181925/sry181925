@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class ShowAllWidget extends StatelessWidget {
   final String leftText;
-  // ignore: prefer_const_constructors_in_immutables
-  ShowAllWidget({Key? key, required this.leftText}) : super(key: key);
+  // ignore: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
+  ShowAllWidget({required this.leftText});
   @override
   Widget build(BuildContext context) {
     return Padding(
